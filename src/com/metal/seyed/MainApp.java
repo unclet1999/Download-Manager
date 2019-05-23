@@ -31,6 +31,7 @@ public class MainApp extends Application {
         this.pane1.setCenter(pane2);
         primarystage.setScene(new Scene(pane1));
         primarystage.setResizable(false);
+        primarystage.setTitle("Black Metal Download Manager");
         primarystage.show();;
     }
 
