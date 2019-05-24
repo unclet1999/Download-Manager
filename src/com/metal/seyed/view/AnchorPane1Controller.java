@@ -8,6 +8,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import javax.swing.*;
+import java.io.BufferedInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 
 public class AnchorPane1Controller {
@@ -68,6 +75,16 @@ public class AnchorPane1Controller {
                 alert.setHeaderText("Text Field is Empty");
                 alert.setContentText("Please Enter A URL");
                 alert.showAndWait();
+            }
+
+            BufferedInputStream in = new BufferedInputStream(new URL(t).openStream());
+            String tempName = new URL(t).toString().substring(t.lastIndexOf("/") + 1);
+            Files.copy(in, Paths.get(tempName), StandardCopyOption.REPLACE_EXISTING);
+            FileOutputStream out = new FileOutputStream(tempName);
+            byte dataBuffer[] = new byte[1024];
+            int bytesRead;
+            while( (bytesRead = in.read(dataBuffer , 0 , 1024)) != -1 ){
+                out.write(dataBuffer , 0 , bytesRead);
             }
         }catch (Exception e){
             JOptionPane.showMessageDialog(null , e.getMessage() );
