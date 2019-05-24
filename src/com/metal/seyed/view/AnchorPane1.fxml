@@ -13,6 +13,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.RadialGradient?>
@@ -45,11 +46,11 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="371.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.25" prefHeight="371.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <Accordion fx:id="accordion" prefHeight="369.0" prefWidth="175.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Accordion fx:id="accordion" prefHeight="369.0" prefWidth="146.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <panes>
                                   <TitledPane fx:id="document" animated="false" text="Document">
                                     <content>
@@ -126,11 +127,7 @@
                                     </TitledPane>
                                 </panes>
                               </Accordion>
-                              <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="325.0">
-                                <buttons>
-                                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="Add New URL..." />
-                                </buttons>
-                              </ButtonBar>
+                              <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="325.0" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -145,9 +142,37 @@
                                                 <ProgressBar prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
                                                 <ProgressBar prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="205.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
                                                 <ProgressBar prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="265.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
-                                                <ButtonBar layoutX="208.0" layoutY="290.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                                <Label layoutX="14.0" layoutY="58.0" text="File1" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="10.0" />
+                                                <Label layoutX="13.0" layoutY="109.0" text="File2" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="10.0" />
+                                                <Label layoutX="9.0" layoutY="178.0" text="File3" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="10.0" />
+                                                <Label layoutX="9.0" layoutY="229.0" text="File4" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="10.0" />
+                                                <ProgressIndicator layoutX="358.0" layoutY="46.0" progress="0.0" AnchorPane.bottomAnchor="245.0" AnchorPane.rightAnchor="60.0" />
+                                                <ProgressIndicator layoutX="326.0" layoutY="106.0" progress="0.0" AnchorPane.bottomAnchor="185.0" AnchorPane.rightAnchor="60.0" />
+                                                <ProgressIndicator layoutX="326.0" layoutY="166.0" progress="0.0" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="60.0" />
+                                                <ProgressIndicator layoutX="326.0" layoutY="226.0" progress="0.0" AnchorPane.bottomAnchor="65.0" AnchorPane.rightAnchor="60.0" />
+                                                <TextField fx:id="getURL" promptText="URL..." AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="5.0" />
+                                                <Button fx:id="addURL" mnemonicParsing="false" text="Add URL..." AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="360.0" />
+                                             </children></AnchorPane>
+                                    </content>
+                                  </Tab>
+                                  <Tab fx:id="queue" text="Queue">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView layoutX="8.0" prefHeight="294.0" prefWidth="415.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <columns>
+                                                      <TableColumn prefWidth="75.0" text="Name" />
+                                                    <TableColumn prefWidth="75.0" text="Size" />
+                                                    <TableColumn prefWidth="75.0" text="Extension" />
+                                                      <TableColumn prefWidth="75.0" text="Is Downloading" />
+                                                  </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                                <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">
                                                   <buttons>
-                                                    <Button mnemonicParsing="false" style="-fx-background-color: #4cff00; -fx-border-radius: 10; -fx-background-radius: 20;" text="Start">
+                                                      <Button mnemonicParsing="false" style="-fx-background-color: #4cff00; -fx-border-radius: 10; -fx-background-radius: 20;" text="Start">
                                                          <font>
                                                             <Font name="System Italic" size="12.0" />
                                                          </font>
@@ -168,36 +193,6 @@
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
                                                       </Button>
-                                                  </buttons>
-                                                </ButtonBar>
-                                                <Label layoutX="14.0" layoutY="58.0" text="File1" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="10.0" />
-                                                <Label layoutX="13.0" layoutY="109.0" text="File2" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="10.0" />
-                                                <Label layoutX="9.0" layoutY="178.0" text="File3" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="10.0" />
-                                                <Label layoutX="9.0" layoutY="229.0" text="File4" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="10.0" />
-                                                <ProgressIndicator layoutX="358.0" layoutY="46.0" progress="0.0" AnchorPane.bottomAnchor="245.0" AnchorPane.rightAnchor="60.0" />
-                                                <ProgressIndicator layoutX="326.0" layoutY="106.0" progress="0.0" AnchorPane.bottomAnchor="185.0" AnchorPane.rightAnchor="60.0" />
-                                                <ProgressIndicator layoutX="326.0" layoutY="166.0" progress="0.0" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="60.0" />
-                                                <ProgressIndicator layoutX="326.0" layoutY="226.0" progress="0.0" AnchorPane.bottomAnchor="65.0" AnchorPane.rightAnchor="60.0" />
-                                             </children></AnchorPane>
-                                    </content>
-                                  </Tab>
-                                  <Tab fx:id="queue" text="Queue">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                             <children>
-                                                <TableView layoutX="8.0" prefHeight="294.0" prefWidth="415.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                  <columns>
-                                                    <TableColumn prefWidth="75.0" text="Name" />
-                                                    <TableColumn prefWidth="75.0" text="Size" />
-                                                      <TableColumn prefWidth="75.0" text="Extention" />
-                                                  </columns>
-                                                   <columnResizePolicy>
-                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                                   </columnResizePolicy>
-                                                </TableView>
-                                                <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">
-                                                  <buttons>
-                                                      <Button mnemonicParsing="false" text="Download" />
                                                     <Button mnemonicParsing="false" text="Delete" />
                                                       <Button mnemonicParsing="false" text="Edit..." />
                                                   </buttons>

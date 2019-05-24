@@ -1,8 +1,8 @@
 package com.metal.seyed.model;
 
-public class Download {
+public class Download extends File {
 
-    String name;
+    private String name;
 
 
 }

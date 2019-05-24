@@ -1,9 +1,7 @@
 package com.metal.seyed.view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 
 public class AnchorPane1Controller {
 
@@ -47,6 +45,11 @@ public class AnchorPane1Controller {
     private Tab queue;
 
     @FXML
-    private Accordion accordion;
+    private Button addURL;
+
+    @FXML
+    private TextField getURL;
+
+
 
 }
