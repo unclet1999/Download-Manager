@@ -151,7 +151,7 @@
                                                 <ProgressIndicator layoutX="326.0" layoutY="166.0" progress="0.0" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="60.0" />
                                                 <ProgressIndicator layoutX="326.0" layoutY="226.0" progress="0.0" AnchorPane.bottomAnchor="65.0" AnchorPane.rightAnchor="60.0" />
                                                 <TextField fx:id="getURL" promptText="URL..." AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="5.0" />
-                                                <Button fx:id="addURL" mnemonicParsing="false" text="Add URL..." AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="360.0" />
+                                                <Button fx:id="addURL" mnemonicParsing="false" onAction="#getURLfromTextField" text="Add URL..." AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="360.0" />
                                              </children></AnchorPane>
                                     </content>
                                   </Tab>
