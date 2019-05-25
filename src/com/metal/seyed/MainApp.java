@@ -1,5 +1,7 @@
 package com.metal.seyed;
 
+import com.metal.seyed.model.Download;
+import com.metal.seyed.view.AnchorPane1Controller;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +14,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainApp extends Application {
+    public static ObservableList<Download> downloads = FXCollections.observableArrayList();
+
+    public static ObservableList<Download> getDownloads() {
+        return downloads;
+    }
+
     private static Stage primarystage;
 
     public static Stage getPrimarystage() {
@@ -31,10 +39,12 @@ public class MainApp extends Application {
         this.pane1 = (BorderPane) loader1.load();
         this.pane2 = (AnchorPane) loader2.load();
         this.pane1.setCenter(pane2);
+        AnchorPane1Controller controller = loader2.getController();
+        controller.setMainApp(this);
         primarystage.setScene(new Scene(pane1));
         primarystage.setResizable(false);
         primarystage.setTitle("Black Metal Download Manager");
-        primarystage.show();;
+        primarystage.show();
     }
 
     public static void main(String[] args) {

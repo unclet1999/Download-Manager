@@ -141,12 +141,12 @@
                                                 <ProgressBar layoutX="108.0" layoutY="225.0" prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
                                                 <ProgressBar prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
                                                 <ProgressBar prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="205.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
-                                                <ProgressBar prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="265.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
+                                                <ProgressBar fx:id="progressBar1" prefWidth="200.0" progress="0.0" AnchorPane.bottomAnchor="265.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
                                                 <Label layoutX="14.0" layoutY="58.0" text="File1" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="10.0" />
                                                 <Label layoutX="13.0" layoutY="109.0" text="File2" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="10.0" />
                                                 <Label layoutX="9.0" layoutY="178.0" text="File3" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="10.0" />
                                                 <Label layoutX="9.0" layoutY="229.0" text="File4" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="10.0" />
-                                                <ProgressIndicator layoutX="358.0" layoutY="46.0" progress="0.0" AnchorPane.bottomAnchor="245.0" AnchorPane.rightAnchor="60.0" />
+                                                <ProgressIndicator fx:id="progressIndicator1" layoutX="358.0" layoutY="46.0" progress="0.0" AnchorPane.bottomAnchor="245.0" AnchorPane.rightAnchor="60.0" />
                                                 <ProgressIndicator layoutX="326.0" layoutY="106.0" progress="0.0" AnchorPane.bottomAnchor="185.0" AnchorPane.rightAnchor="60.0" />
                                                 <ProgressIndicator layoutX="326.0" layoutY="166.0" progress="0.0" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="60.0" />
                                                 <ProgressIndicator layoutX="326.0" layoutY="226.0" progress="0.0" AnchorPane.bottomAnchor="65.0" AnchorPane.rightAnchor="60.0" />
@@ -159,12 +159,12 @@
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <TableView layoutX="8.0" prefHeight="294.0" prefWidth="415.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <TableView fx:id="tableView" layoutX="8.0" onSort="#initialize" prefHeight="294.0" prefWidth="415.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                   <columns>
-                                                      <TableColumn prefWidth="75.0" text="Name" />
-                                                    <TableColumn prefWidth="75.0" text="Size" />
-                                                    <TableColumn prefWidth="75.0" text="Extension" />
-                                                      <TableColumn prefWidth="75.0" text="Is Downloading" />
+                                                      <TableColumn fx:id="tableColumn1" prefWidth="75.0" text="Name" />
+                                                    <TableColumn fx:id="tableColumn2" prefWidth="75.0" text="Size" />
+                                                    <TableColumn fx:id="tableColumn3" prefWidth="75.0" text="Extension" />
+                                                      <TableColumn fx:id="tableColumn4" prefWidth="75.0" text="Is Downloading" />
                                                   </columns>
                                                    <columnResizePolicy>
                                                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -172,7 +172,7 @@
                                                 </TableView>
                                                 <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">
                                                   <buttons>
-                                                      <Button mnemonicParsing="false" style="-fx-background-color: #4cff00; -fx-border-radius: 10; -fx-background-radius: 20;" text="Start">
+                                                      <Button mnemonicParsing="false" onAction="#StartDownload" style="-fx-background-color: #4cff00; -fx-border-radius: 10; -fx-background-radius: 20;" text="Start">
                                                          <font>
                                                             <Font name="System Italic" size="12.0" />
                                                          </font>
@@ -188,12 +188,12 @@
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
                                                       </Button>
-                                                      <Button mnemonicParsing="false" style="-fx-background-color: #ea0000;" text="Stop" textFill="WHITE">
+                                                      <Button mnemonicParsing="false" onAction="#StopDownload" style="-fx-background-color: #ea0000;" text="Stop" textFill="WHITE">
                                                          <cursor>
                                                             <Cursor fx:constant="HAND" />
                                                          </cursor>
                                                       </Button>
-                                                    <Button mnemonicParsing="false" text="Delete" />
+                                                    <Button mnemonicParsing="false" onAction="#RemoveDownload" text="Delete" />
                                                       <Button mnemonicParsing="false" text="Edit..." />
                                                   </buttons>
                                                 </ButtonBar>
